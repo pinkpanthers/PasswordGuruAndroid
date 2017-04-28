@@ -1,7 +1,7 @@
 # PasswordGuruAndroid
 Password Guru for Android
 
-Purpose to handle unlimited amount of already existing accounts passwords.
+Instead of remembering every password, the purpose is handle unlimited amount of already existing accounts for easy access when needed.
 * Capabilities *
 Asks for Service Provider (entity of which you hold an account with)
 Asks for username (username used when account was created)
