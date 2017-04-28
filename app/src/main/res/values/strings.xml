@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Smith Guru</string>
+    <string name="app_welcome_main_screen_tittle">Accounts Library</string>
+    <string name="app_password_view_tittle">Password Manager</string>
+</resources>
