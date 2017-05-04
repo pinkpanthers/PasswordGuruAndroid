@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void AddData(String firstName,String lastName, String favFood ){
-        boolean insertData = myDB.addData(firstName,lastName,favFood);
+    public void AddData(String userServiceProvider,String accountUsername, String accountPassword ){
+        boolean insertData = myDB.addData(userServiceProvider,accountUsername,accountPassword);
 
         if(insertData==true){
             Toast.makeText(MainActivity.this,"Successfully Entered Data!",Toast.LENGTH_LONG).show();

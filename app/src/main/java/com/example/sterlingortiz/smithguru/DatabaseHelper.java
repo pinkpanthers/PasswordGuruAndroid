@@ -16,9 +16,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "users.db";
     public static final String TABLE_NAME = "users_data";
     public static final String COL1 = "ID";
-    public static final String COL2 = "FIRSTNAME";
-    public static final String COL3 = "LASTNAME";
-    public static final String COL4 = "FAVFOOD";
+    public static final String COL2 = "SERVICE";
+    public static final String COL3 = "USERNAME";
+    public static final String COL4 = "PASSWORD";
 
 
     public DatabaseHelper(Context context) {
@@ -28,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                " FIRSTNAME TEXT, LASTNAME TEXT, FAVFOOD TEXT)";
+                " SERVICE TEXT, USERNAME TEXT, PASSWORD TEXT)";
         db.execSQL(createTable);
     }
 
@@ -38,16 +38,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String fName, String lName, String fFood) {
+    public boolean addData(String serviceProvider, String username, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL2, fName);
-        contentValues.put(COL3, lName);
-        contentValues.put(COL4, fFood);
+        contentValues.put(COL2, serviceProvider);
+        contentValues.put(COL3, username);
+        contentValues.put(COL4, password);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
-        //if date as inserted incorrectly it will return -1
+        //if data as inserted incorrectly it will return -1
         if (result == -1) {
             return false;
         } else {
